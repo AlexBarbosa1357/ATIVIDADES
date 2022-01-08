@@ -1,4 +1,7 @@
 # --- DECLARAÇÃO DE CLASSES, VAIRAVEIS E LISTAS
+
+
+
 compradores = []
 gestao_gerente = []
 senha = "adm123"
@@ -65,7 +68,7 @@ def Verificar_graos():
 				print(f"Feijão {x.quantidade_feijao}Kg")
 				print(f"Açucar {x.quantidade_acucar}Kg")
 				print(f"Milho {x.quantidade_milho} Kg")
-#F---UNÇÃO DO CLIENTE COMPRAR ARROZ:
+# ---UNÇÃO DO CLIENTE COMPRAR ARROZ:
 def Comprar_Arroz():
 	print("-+-+-+-+-+-+"*20)
 	nome = str(input("Informe seu Nome: "))
@@ -86,7 +89,7 @@ def Comprar_Arroz():
 		else:
 			print(f"Sem quantidade de Estoque Suficiente para essa Quantidade \nTemos Apenas {x.quantidade_arroz}Kg em estoque")
 			break
-#F---UNÇÃO DO CLIENTE COMPRAR FEIJÂO
+# ---FUNÇÃO DO CLIENTE COMPRAR FEIJÂO
 def Comprar_Feijao():
 	print("-+-+-+-+-+-+"*20)
 	nome = str(input("Informe seu Nome: "))
