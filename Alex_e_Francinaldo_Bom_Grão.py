@@ -1,4 +1,4 @@
-# --- DECLARAÇÃO DE CLASSES, VAIRAVEIS E LISTAS
+#  ---DECLARAÇÃO DE CLASSES, VAIRAVEIS E LISTAS 
 compradores = []
 gestao_gerente = []
 senha = "adm123"
@@ -25,15 +25,15 @@ class gestao_graos:
 		self.rendas = rendas
 		self.total_renda = total_renda
 		self.valor_total = valor_total
-# ---Usuário digitando quantos quilos tem de cada grão
+# U---suário digitando quantos quilos tem de cada grão
 quantidade_arroz = float(input("Digite a Quantidade de Arroz no Estoque: "))
 quantidade_feijao = float(input("Digite a Quantidade de Feijão no Estoque: "))
 quantidade_acucar = float(input("Digite a Quantidade de Açucar no Estoque: "))
 quantidade_milho = float(input("Digite a Quantidade de Milho no Estoque: "))
 rendas = float(input("Digite A renda Inicial do Comercio: "))
-# ---Adicionando na lista
+# A---dicionando na lista
 gestao_gerente.append(gestao_graos(quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, rendas, 0, 0)) #Graos e Renda do Comercio.
-#--- FUNÇÃO PARA GERENTE OU DONO REFAZER O ESTOQUE
+# ---FUNÇÃO PARA GERENTE OU DONO REFAZER O ESTOQUE
 def Restoque():
 	print("-+-+-+-+-+-+"*20)
 	total_arroz = float(input("Informe a quantidade de Kilos Arroz comprados: "))
@@ -58,14 +58,14 @@ def Restoque():
 		print(f"O dinheiro Gasto em Arroz, Feijão, Açucar e Milho foi R${total_renda}")
 		print(f"A renda agora é de R${x.rendas}")
 		print("-+-+-+-+-+-+"*20)
-#---VERIFICANDO QUANTIDADE DE GRÂOS
+#V---ERIFICANDO QUANTIDADE DE GRÂOS
 def Verificar_graos():
 	for x in gestao_gerente:
 				print(f"Arroz {x.quantidade_arroz}Kg")
 				print(f"Feijão {x.quantidade_feijao}Kg")
 				print(f"Açucar {x.quantidade_acucar}Kg")
 				print(f"Milho {x.quantidade_milho} Kg")
-#---FUNÇÃO DO CLIENTE COMPRAR ARROZ:
+#F---UNÇÃO DO CLIENTE COMPRAR ARROZ:
 def Comprar_Arroz():
 	print("-+-+-+-+-+-+"*20)
 	nome = str(input("Informe seu Nome: "))
@@ -86,7 +86,7 @@ def Comprar_Arroz():
 		else:
 			print(f"Sem quantidade de Estoque Suficiente para essa Quantidade \nTemos Apenas {x.quantidade_arroz}Kg em estoque")
 			break
-#---FUNÇÃO DO CLIENTE COMPRAR FEIJÂO
+#F---UNÇÃO DO CLIENTE COMPRAR FEIJÂO
 def Comprar_Feijao():
 	print("-+-+-+-+-+-+"*20)
 	nome = str(input("Informe seu Nome: "))
@@ -107,7 +107,7 @@ def Comprar_Feijao():
 		else:
 			print(f"Sem quantidade de Estoque Suficiente para essa Quantidade \nTemos Apenas {x.quantidade_feijao}Kg em estoque")
 			break
-#---FUNÇÃO DO CLIENTE COMPRAR AÇUCAR
+#F---UNÇÃO DO CLIENTE COMPRAR AÇUCAR
 def Comprar_Acucar():
 	print("-+-+-+-+-+-+"*20)
 	nome = str(input("Informe seu Nome: "))
@@ -128,7 +128,7 @@ def Comprar_Acucar():
 		else:
 			print(f"Sem quantidade de Estoque Suficiente para essa Quantidade \nTemos Apenas {x.quantidade_acucar}Kg em estoque")
 			break
-#---FUNÇÃO DO CLIENTE COMPRAR MILHO
+#F---UNÇÃO DO CLIENTE COMPRAR MILHO
 def Comprar_Milho():
 	print("-+-+-+-+-+-+"*20)
 	nome = str(input("Informe seu Nome: "))
@@ -149,7 +149,7 @@ def Comprar_Milho():
 		else:
 			print(f"Sem quantidade de Estoque Suficiente para essa Quantidade \nTemos Apenas {x.quantidade_feijao}Kg em estoque")
 			break
-#--- FUNÇÃO PARa VERIFICAR HISTORICO DE VENDAS DOS CLIENTES
+# ---FUNÇÃO PARa VERIFICAR HISTORICO DE VENDAS DOS CLIENTES
 def Verificando_ultimas_vendas():
 	for x in compradores:
 		print("-+-+-+-+-+-+"*20)
@@ -159,27 +159,27 @@ def Verificando_ultimas_vendas():
 		print(f"Arroz:{x.kilos_arroz}Kg | Feijão:{x.kilos_feijao}Kg | Açucar:{x.kilos_acucar}Kg | Milho:{x.kilos_milho}Kg")
 		print(f"Valor da Venda:R${x.gasto_cliente}")
 		print("-+-+-+-+-+-+"*20)
-#--- COMPRANDO GRÂOS
+# ---COMPRANDO GRÂOS
 def Comprar_Graos():
-	while True: #--------MENU GRÂOS
+	while True: #-----MENU GRÂOS
 		print("-+-+-+-+-+-+"*20)
 		print("1- Comprar Arroz \n2- Comprar Feijão \n3- Comprar Açucar \n4- Comprar Milho \n0- Sair")
 		print("-+-+-+-+-+-+"*20)
 		opcao = str(input("Informe a Opção: "))
-		if opcao == "1": #--- Comprando arroz
+		if opcao == "1": # ---Comprando arroz
 			Comprar_Arroz()
-		elif opcao == "2": #--- Comprando Feijão
+		elif opcao == "2": # ---Comprando Feijão
 			Comprar_Feijao()
-		elif opcao == "3": #--- Comprando Açucar
+		elif opcao == "3": # ---Comprando Açucar
 			Comprar_Acucar()
-		elif opcao == "4": #--- Comprando Milho
+		elif opcao == "4": # ---Comprando Milho
 			Comprar_Milho()         
 		elif opcao == "0":
 			break
 		else:
 			print("Opção Invalida.")
 	pass  
-#--- FUNÇÃO MENU DO CLIENTE
+# ---FUNÇÃO MENU DO CLIENTE
 def Gestao_Cliente():
 	while True:
 		print("-+-+-+-+-+-+"*20)
@@ -194,7 +194,7 @@ def Gestao_Cliente():
 			break
 		else:
 			print("Opção Invalida.")
-#--- FUNÇÃO PARA VERIFICAR LUCRO
+# ---FUNÇÃO PARA VERIFICAR LUCRO
 def Verificando_Lucros():
 	valor_total = 0
 	for x in compradores:
@@ -209,7 +209,7 @@ def Verificando_Lucros():
 		print(f'Na semana houve lucro de R${lucro} ')
 	else:
 		print(f'Na semana não houve lucro') 	
-#--- FUNÇÃO MENU DO GERENTE OU DONO
+# ---FUNÇÃO MENU DO GERENTE OU DONO
 def Gestao_Gerente():
 	while True:
 		print("-+-+-+-+-+-+"*20)
@@ -231,7 +231,7 @@ def Gestao_Gerente():
 			break
 		else:
 			print("Opção Invalida.")
-# --- MENU INICIAL DO PROGRAMA
+#  ---MENU INICIAL DO PROGRAMA
 while True:
 	print("-+-+-+-+-+-+"*20)
 	print("1- Gestão Clientes \n2- Gestão Gerente\n3- Trocar senha \n0- Sair")
@@ -253,4 +253,4 @@ while True:
 		break
 	else:
 		print("Opção Invalida.")
-# ---SOLI DEO GLORIA--- #
+# S---OLI DEO GLORIA ---#
