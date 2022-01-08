@@ -48,28 +48,29 @@ def outputCars():
 
 # ---Menu inicial
 while True:
+	
 	escolha = int(input('Digite de acordo com a escolha\n1-Fabricar mais carros  2-Pesquisar por um carro especifico  3-Consultar Caractereisticas dos carros \n  4-Trocar cor de um carro   5-Sair:'))
 	if escolha == 1:
-	    while True:	
-			escolha = input('Continuar produzindo?[ s/n ]\n=> ')
+	    	while True:	
+				escolha = input('Digite S-Para continuar fabricando  e  N-Para parar de fabricar')
 
-			if 'n' == escolha.lower():
-				break
-			
-			elif 's' == escolha.lower():
-				estoque.append(Veiculo(
-					placa=input('Digite a placa do carro: '),
-					marca=input('Digite a marca do carro: ').capitalize(),
-					cor=input('Digite a cor do carro: ').capitalize(),
-					chassis=input('Digite o chassis do carro: '),
-					ano=int(input('Digite o ano do carro: ')),
-					modelo=input('Digite o modelo do carro: ').capitalize(),
-				))
-				print('\n ==================================================='*5)
+				if 'n' == escolha.lower():
+					break
+				
+				elif 's' == escolha.lower():
+					estoque.append(Veiculo(
+						placa=input('Digite a placa do carro: '),
+						marca=input('Digite a marca do carro: ').capitalize(),
+						cor=input('Digite a cor do carro: ').capitalize(),
+						chassis=input('Digite o chassis do carro: '),
+						ano=int(input('Digite o ano do carro: ')),
+						modelo=input('Digite o modelo do carro: ').capitalize(),
+					))
+					print('\n ==================================================='*5)
 
-			else:
-				print('Escolha inválida!')
-				break
+				else:
+					print('Escolha inválida!')
+					break
 	elif escolha==2:
 		# ---Puxando função para pesquisar o carro
 		searchCar(input('Digite a marca do carro: '))
