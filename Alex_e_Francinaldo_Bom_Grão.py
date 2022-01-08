@@ -1,7 +1,4 @@
-# --- DECLARAÇÃO DE CLASSES, VAIRAVEIS E LISTAS
-
-
-
+# ---DECLARAÇÃO DE CLASSES, VAIRAVEIS E LISTAS
 compradores = []
 gestao_gerente = []
 senha = "adm123"
@@ -61,14 +58,14 @@ def Restoque():
 		print(f"O dinheiro Gasto em Arroz, Feijão, Açucar e Milho foi R${total_renda}")
 		print(f"A renda agora é de R${x.rendas}")
 		print("-+-+-+-+-+-+"*20)
-#V---ERIFICANDO QUANTIDADE DE GRÂOS
+# ---VERIFICANDO QUANTIDADE DE GRÂOS
 def Verificar_graos():
 	for x in gestao_gerente:
 				print(f"Arroz {x.quantidade_arroz}Kg")
 				print(f"Feijão {x.quantidade_feijao}Kg")
 				print(f"Açucar {x.quantidade_acucar}Kg")
 				print(f"Milho {x.quantidade_milho} Kg")
-# ---UNÇÃO DO CLIENTE COMPRAR ARROZ:
+# ---FUNÇÃO DO CLIENTE COMPRAR ARROZ:
 def Comprar_Arroz():
 	print("-+-+-+-+-+-+"*20)
 	nome = str(input("Informe seu Nome: "))
@@ -110,7 +107,7 @@ def Comprar_Feijao():
 		else:
 			print(f"Sem quantidade de Estoque Suficiente para essa Quantidade \nTemos Apenas {x.quantidade_feijao}Kg em estoque")
 			break
-#F---UNÇÃO DO CLIENTE COMPRAR AÇUCAR
+# ---FUNÇÃO DO CLIENTE COMPRAR AÇUCAR
 def Comprar_Acucar():
 	print("-+-+-+-+-+-+"*20)
 	nome = str(input("Informe seu Nome: "))
@@ -131,7 +128,7 @@ def Comprar_Acucar():
 		else:
 			print(f"Sem quantidade de Estoque Suficiente para essa Quantidade \nTemos Apenas {x.quantidade_acucar}Kg em estoque")
 			break
-#F---UNÇÃO DO CLIENTE COMPRAR MILHO
+# ---FUNÇÃO DO CLIENTE COMPRAR MILHO
 def Comprar_Milho():
 	print("-+-+-+-+-+-+"*20)
 	nome = str(input("Informe seu Nome: "))
