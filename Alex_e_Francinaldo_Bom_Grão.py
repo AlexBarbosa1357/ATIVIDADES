@@ -1,16 +1,11 @@
 # --- DECLARAÇÃO DE CLASSES, VAIRAVEIS E LISTAS
 compradores = []
-
 gestao_gerente = []
-
 senha = "adm123"
-
 valor_arroz = 2.10
 valor_feijao = 1.25
 valor_acucar = 1.10
 valor_milho = 1.30
-
-
 class gestao_cliente:
 	def __init__(self, nome, data, pagamento, kilos_arroz, kilos_feijao, kilos_acucar, kilos_milho, gasto_cliente):
 		self.nome = nome
@@ -21,9 +16,6 @@ class gestao_cliente:
 		self.kilos_acucar = kilos_acucar
 		self.kilos_milho = kilos_milho
 		self.gasto_cliente = gasto_cliente
-		
-
-
 class gestao_graos:
 	def __init__(self, quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, rendas, total_renda, valor_total):
 		self.quantidade_arroz = quantidade_arroz
@@ -73,7 +65,6 @@ def Verificar_graos():
 				print(f"Feijão {x.quantidade_feijao}Kg")
 				print(f"Açucar {x.quantidade_acucar}Kg")
 				print(f"Milho {x.quantidade_milho} Kg")
-
 #---FUNÇÃO DO CLIENTE COMPRAR ARROZ:
 def Comprar_Arroz():
 	print("-+-+-+-+-+-+"*20)
@@ -206,11 +197,8 @@ def Gestao_Cliente():
 #--- FUNÇÃO PARA VERIFICAR LUCRO
 def Verificando_Lucros():
 	valor_total = 0
-
 	for x in compradores:
 		valor_total = x.gasto_cliente + valor_total
-	   
-	
 	lucro = 0
 	contador = 0
 	for x in gestao_gerente:
@@ -220,8 +208,7 @@ def Verificando_Lucros():
 	if lucro > 0:
 		print(f'Na semana houve lucro de R${lucro} ')
 	else:
-		print(f'Na semana não houve lucro')
-
+		print(f'Na semana não houve lucro') 	
 #--- FUNÇÃO MENU DO GERENTE OU DONO
 def Gestao_Gerente():
 	while True:
@@ -229,29 +216,21 @@ def Gestao_Gerente():
 		print("1- Verificar Ultimas Vendas \n2- Verificar Saldo \n3- Verificar Estoque \n4- Restoque \n5- Verificar Lucros\n0- Sair")
 		print("-+-+-+-+-+-+"*20)
 		opcao = str(input("Informe a Opção: "))
-
 		if opcao == "1":
 			Verificando_ultimas_vendas()
-
 		elif opcao == "2":
 			for x in gestao_gerente:
 				print(f"O Saldo do Comercio e: R${x.rendas}")
-
 		elif opcao == "3":
 			Verificar_graos()
-
 		elif opcao == "4":
 			Restoque()
-
 		elif opcao == "5":
 			Verificando_Lucros()
-		
 		elif opcao == "0":
 			break
-
 		else:
 			print("Opção Invalida.")
-	
 # --- MENU INICIAL DO PROGRAMA
 while True:
 	print("-+-+-+-+-+-+"*20)
