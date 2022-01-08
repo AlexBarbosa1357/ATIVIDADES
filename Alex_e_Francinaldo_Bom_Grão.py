@@ -160,9 +160,7 @@ def Verificando_ultimas_vendas():
 		print(f"Valor da Venda:R${x.gasto_cliente}")
 		print("-+-+-+-+-+-+"*20)
 # ---COMPRANDO GRÂOS
-def Comprar_Graos():
-
-	
+def Comprar_Graos():	
 	while True: #-----MENU GRÂOS
 		print("-+-+-+-+-+-+"*20)
 		print("1- Comprar Arroz \n2- Comprar Feijão \n3- Comprar Açucar \n4- Comprar Milho \n0- Sair")
