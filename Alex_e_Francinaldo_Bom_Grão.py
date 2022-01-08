@@ -240,20 +240,17 @@ while True:
 	if opcao == "1":
 			Gestao_Cliente()
 	elif opcao == "2":
-		opc = str(input("Digite Sua Senha:"))
+		opc = str(input("Digite Sua Senha: "))
 		if opc == senha:
 			Gestao_Gerente()
 		else:
 			print("Senha Invalida.")
-
 	elif opcao == "3":
-		opc = str(input("Digite Sua Senha:"))
+		opc = str(input("Digite Sua Senha: "))
 		if opc == senha:  
-			senha = str(input("digite a nova senha:"))
+			senha = str(input("digite a nova senha: "))
 	elif opcao == "0":
 		break
-
 	else:
 		print("Opção Invalida.")
-
 # ---SOLI DEO GLORIA--- #
