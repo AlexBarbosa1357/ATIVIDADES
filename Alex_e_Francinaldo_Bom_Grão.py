@@ -1,4 +1,4 @@
-#  ---DECLARAÇÃO DE CLASSES, VAIRAVEIS E LISTAS 
+# --- DECLARAÇÃO DE CLASSES, VAIRAVEIS E LISTAS
 compradores = []
 gestao_gerente = []
 senha = "adm123"
@@ -25,13 +25,13 @@ class gestao_graos:
 		self.rendas = rendas
 		self.total_renda = total_renda
 		self.valor_total = valor_total
-# U---suário digitando quantos quilos tem de cada grão
+# ---Usuário digitando quantos quilos tem de cada grão
 quantidade_arroz = float(input("Digite a Quantidade de Arroz no Estoque: "))
 quantidade_feijao = float(input("Digite a Quantidade de Feijão no Estoque: "))
 quantidade_acucar = float(input("Digite a Quantidade de Açucar no Estoque: "))
 quantidade_milho = float(input("Digite a Quantidade de Milho no Estoque: "))
 rendas = float(input("Digite A renda Inicial do Comercio: "))
-# A---dicionando na lista
+# ---Adicionando na lista
 gestao_gerente.append(gestao_graos(quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, rendas, 0, 0)) #Graos e Renda do Comercio.
 # ---FUNÇÃO PARA GERENTE OU DONO REFAZER O ESTOQUE
 def Restoque():
@@ -253,4 +253,4 @@ while True:
 		break
 	else:
 		print("Opção Invalida.")
-# S---OLI DEO GLORIA ---#
+# ---SOLI DEO GLORIA---#
