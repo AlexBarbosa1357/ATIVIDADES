@@ -1,4 +1,7 @@
 # --- DECLARAÇÃO DE CLASSES, VAIRAVEIS E LISTAS
+
+
+
 compradores = []
 gestao_gerente = []
 senha = "adm123"
