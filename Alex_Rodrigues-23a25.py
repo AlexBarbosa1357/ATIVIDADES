@@ -44,19 +44,19 @@ def searchCar(marca: str):
 def outputCars():
 	for index, car in enumerate(estoque):
 		car: Veiculo
-		print(f'Placa: {car.placa}, marca: {car.marca}, cor: {car.cor}, chassis: {car.chassis}, ano: {car.ano}, modelo: {car.modelo}')
+		print(f'Index{index}, placa: {car.placa}, marca: {car.marca}, cor: {car.cor}, chassis: {car.chassis}, ano: {car.ano}, modelo: {car.modelo}')
 
 # ---Menu inicial
 while True:
 	escolha = int(input('Digite de acordo com a escolha\n1-Fabricar mais carros  2-Pesquisar por um carro especifico  3-Consultar Caractereisticas dos carros \n  4-Trocar cor de um carro   5-Sair:'))
 	if escolha == 1:
 	    while True:	
-			escolha = input('Continuar produzindo?[ s/n ]\n=> ').lower()
-			
-			if 'n' == escolha:
+			escolha = input('Continuar produzindo?[ s/n ]\n=> ')
+
+			if 'n' == escolha.lower():
 				break
 			
-			elif 's' == escolha:
+			elif 's' == escolha.lower():
 				estoque.append(Veiculo(
 					placa=input('Digite a placa do carro: '),
 					marca=input('Digite a marca do carro: ').capitalize(),
@@ -65,8 +65,11 @@ while True:
 					ano=int(input('Digite o ano do carro: ')),
 					modelo=input('Digite o modelo do carro: ').capitalize(),
 				))
+				print('\n ==================================================='*5)
+
 			else:
 				print('Escolha inválida!')
+				break
 	elif escolha==2:
 		# ---Puxando função para pesquisar o carro
 		searchCar(input('Digite a marca do carro: '))
@@ -79,5 +82,6 @@ while True:
 		estoque[num].changeColor(str(input("Digite a nova cor do veículo: ")))
 	elif escolha==5:
 		print('Fim!')
+		break
 	else:
 		print('Escolha de operação inválida!')
