@@ -95,13 +95,7 @@ elif escolha ==4:
     for i in naipe:
         for j in valor:
             deck.append(f'{i}{j}')
-# 
-# Um jeito de fazer seria usndo a estrutura "set()",
-# que não matem uma ordem entre seus elementos e não guarda
-# elementos repetidos, o que não vai afetar as cartas, pois
-# cada carte é única no baralho 
-# 
-    # print(set(deck))
+
     print(f'Deck não em baralhado : {deck}')
     Ouros   =  ['AD', '2D', '3D', '4D', '5D', '6D', '7D', '8D', '9D', 'TD', 'JD', 'QD', 'KD']
     Paus    =  ['AC', '2C', '3C', '4C', '5C', '6C', '7C', '8C', '9C', 'TC', 'JC', 'QC', 'KC']
