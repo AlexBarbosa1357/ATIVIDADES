@@ -1,6 +1,4 @@
 # --- DECLARAÇÃO DE CLASSES, VAIRAVEIS E LISTAS
-
-#Alex feio 
 compradores = []
 gestao_gerente = []
 senha = "adm123"
