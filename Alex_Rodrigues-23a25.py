@@ -7,7 +7,7 @@ class Veiculo:
 		self.ano = ano
 		self.cor = cor 
 		self.placa = placa
-    
+	
 	def changeColor(self, newColor: str) -> None:
 		"""Esse metodo troca a cor do carro """
 		self.cor = newColor
@@ -44,16 +44,18 @@ def searchCar(marca: str):
 def outputCars():
 	for index, car in enumerate(estoque):
 		car: Veiculo
-		print(f'Index{index}, placa: {car.placa}, marca: {car.marca}, cor: {car.cor}, chassis: {car.chassis}, ano: {car.ano}, modelo: {car.modelo}')
-
+		print('_+_+_+_+_+_+_+_+'*20)
+		print(f'Index: {index}, placa: {car.placa}, marca: {car.marca}, cor: {car.cor}, chassis: {car.chassis}, ano: {car.ano}, modelo: {car.modelo}')
+		print('_+_+_+_+_+_+_+_+'*20)
 # ---Menu inicial
 while True:
-	
-	escolha = int(input('Digite de acordo com a escolha\n1-Fabricar mais carros  2-Pesquisar por um carro especifico  3-Consultar Caractereisticas dos carros \n  4-Trocar cor de um carro   5-Sair:'))
+	print('===================='*10)
+	escolha = int(input('Digite de acordo com a escolha\n1-Fabricar mais carros  2-Pesquisar por um carro especifico  3-Consultar Caractereisticas dos carros \n  4-Trocar cor de um carro   5-Sair\n => '))
 	if escolha == 1:
-	    	while True:	
-				escolha = input('Digite S-Para continuar fabricando  e  N-Para parar de fabricar')
-
+			while True:	
+				print('-+-+-+'*20)
+				escolha = input('Digite S-Para continuar fabricando  e  N-Para parar de fabricar: ')
+			
 				if 'n' == escolha.lower():
 					break
 				
@@ -67,6 +69,7 @@ while True:
 						modelo=input('Digite o modelo do carro: ').capitalize(),
 					))
 					print('\n ==================================================='*5)
+					print('\n')
 
 				else:
 					print('Escolha inválida!')
@@ -79,8 +82,9 @@ while True:
 		outputCars()
 	elif escolha ==4:
 		# ---Trocando a cor do carro
-		num=int(input('Digite o index do carro'))
-		estoque[num].changeColor(str(input("Digite a nova cor do veículo: ")))
+		num=int(input('Digite o index do carro: '))
+		estoque[num].changeColor(str(input("Digite a nova cor do veículo: ")).capitalize())
+		print('_+_+_+_+'*8)
 	elif escolha==5:
 		print('Fim!')
 		break
