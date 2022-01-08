@@ -2,6 +2,9 @@
 
 
 
+
+
+
 compradores = []
 gestao_gerente = []
 senha = "adm123"
