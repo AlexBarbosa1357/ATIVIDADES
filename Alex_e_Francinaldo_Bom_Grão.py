@@ -17,22 +17,22 @@ class gestao_cliente:
 		self.kilos_milho = kilos_milho
 		self.gasto_cliente = gasto_cliente
 class gestao_graos:
-	def __init__(self, quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, rendas, total_renda, valor_total):
+	def __init__(self, quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, caixa, total_renda, valor_total):
 		self.quantidade_arroz = quantidade_arroz
 		self.quantidade_feijao = quantidade_feijao
 		self.quantidade_acucar = quantidade_acucar
 		self.quantidade_milho =  quantidade_milho
-		self.rendas = rendas
+		self.caixa = caixa
 		self.total_renda = total_renda
 		self.valor_total = valor_total
-# ---Usuário digitando quantos quilos tem de cada grão
+# ---Usuário digitando quantidade de quilos e caixa inicial 
 quantidade_arroz = float(input("Digite a Quantidade de Arroz no Estoque: "))
 quantidade_feijao = float(input("Digite a Quantidade de Feijão no Estoque: "))
 quantidade_acucar = float(input("Digite a Quantidade de Açucar no Estoque: "))
 quantidade_milho = float(input("Digite a Quantidade de Milho no Estoque: "))
-rendas = float(input("Digite A renda Inicial do Comercio: "))
+caixa = float(input("Digite A renda Inicial do Comercio: "))
 # ---Adicionando na lista
-gestao_gerente.append(gestao_graos(quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, rendas, 0, 0)) #Graos e Renda do Comercio.
+gestao_gerente.append(gestao_graos(quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, caixa, 0, 0)) #Graos e Renda do Comercio.
 # ---FUNÇÃO PARA GERENTE OU DONO REFAZER O ESTOQUE
 def Restoque():
 	print("-+-+-+-+-+-+"*20)
@@ -53,10 +53,10 @@ def Restoque():
 		x.quantidade_milho = total_milho + x.quantidade_milho
 		print(f"A Quantidade de milho agora é {x.quantidade_milho}Kg")
 		print("-+-+-+-+-+-+"*20)
-		x.rendas = x.rendas - total_renda
+		x.caixa = x.caixa - total_renda
 		x.total_renda = total_renda
 		print(f"O dinheiro Gasto em Arroz, Feijão, Açucar e Milho foi R${total_renda}")
-		print(f"A renda agora é de R${x.rendas}")
+		print(f"A renda agora é de R${x.caixa}")
 		print("-+-+-+-+-+-+"*20)
 # ---VERIFICANDO QUANTIDADE DE GRÂOS
 def Verificar_graos():
@@ -77,7 +77,7 @@ def Comprar_Arroz():
 	for x in gestao_gerente:
 		if kilos_arroz <= x.quantidade_arroz:
 			x.quantidade_arroz = x.quantidade_arroz - kilos_arroz 
-			x.rendas = x.rendas + gasto_cliente
+			x.caixa = x.caixa + gasto_cliente
 			print("-+-+-+-+-+-+"*20)
 			print(f"O total a ser Pago é: R${gasto_cliente}")
 			print(f"A Quantidade de Arroz requirida foi: {kilos_arroz}Kg")
@@ -98,7 +98,7 @@ def Comprar_Feijao():
 	for x in gestao_gerente:
 		if kilos_feijao <= x.quantidade_feijao:
 			x.quantidade_feijao = x.quantidade_feijao - kilos_feijao 
-			x.rendas = x.rendas + gasto_cliente
+			x.caixa = x.caixa + gasto_cliente
 			print("-+-+-+-+-+-+"*20)
 			print(f"O total a ser Pago é: R${gasto_cliente}")
 			print(f"A Quantidade de Feijão requirida foi: {kilos_feijao}Kg")
@@ -119,7 +119,7 @@ def Comprar_Acucar():
 	for x in gestao_gerente:
 		if kilos_acucar <= x.quantidade_acucar:
 			x.quantidade_acucar = x.quantidade_acucar - kilos_acucar 
-			x.rendas = x.rendas + gasto_cliente
+			x.caixa = x.caixa + gasto_cliente
 			compradores.append(gestao_cliente(nome, data, pagamento, "", "", kilos_acucar, "", gasto_cliente))
 			print("-+-+-+-+-+-+"*20)
 			print(f"O total a ser Pago é: R${gasto_cliente}")
@@ -140,7 +140,7 @@ def Comprar_Milho():
 	for x in gestao_gerente:
 		if kilos_milho <= x.quantidade_milho:
 			x.quantidade_milho = x.quantidade_milho - kilos_milho 
-			x.rendas = x.rendas + gasto_cliente
+			x.caixa = x.caixa + gasto_cliente
 			print("-+-+-+-+-+-+"*20)
 			print(f"O total a ser Pago é: R${gasto_cliente}")
 			print(f"A Quantidade de Milho requirida foi: {kilos_milho}Kg")
@@ -220,7 +220,7 @@ def Gestao_Gerente():
 			Verificando_ultimas_vendas()
 		elif opcao == "2":
 			for x in gestao_gerente:
-				print(f"O Saldo do Comercio e: R${x.rendas}")
+				print(f"O Saldo do Comercio e: R${x.caixa}")
 		elif opcao == "3":
 			Verificar_graos()
 		elif opcao == "4":
