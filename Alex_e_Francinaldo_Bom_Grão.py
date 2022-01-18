@@ -1,4 +1,9 @@
 # ---DECLARAÇÃO DE CLASSES, VAIRAVEIS E LISTAS
+
+# ___ Dicionario numa nova area pra mostrar preços,  e no historico de compras clientes e gerente
+
+
+
 compradores = []
 gestao_gerente = []
 senha = "adm123"
