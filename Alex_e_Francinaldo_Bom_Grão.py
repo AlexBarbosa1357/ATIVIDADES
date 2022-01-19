@@ -2,8 +2,6 @@
 
 # ___ Dicionario numa nova area pra mostrar preços,  e no historico de compras clientes e gerente
 
-
-
 compradores = []
 gestao_gerente = []
 senha = "adm123"
@@ -23,14 +21,79 @@ class gestao_cliente:
 		self.kilos_milho = kilos_milho
 		self.gasto_cliente = gasto_cliente
 class gestao_graos:
-	def __init__(self, quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, caixa, total_renda, valor_total):
-		self.quantidade_arroz = quantidade_arroz
-		self.quantidade_feijao = quantidade_feijao
-		self.quantidade_acucar = quantidade_acucar
-		self.quantidade_milho =  quantidade_milho
-		self.caixa = caixa
-		self.total_renda = total_renda
-		self.valor_total = valor_total
+	def __init__(self, _quantidade_arroz, _quantidade_feijao, _quantidade_acucar, _quantidade_milho, _caixa, _total_renda, _valor_total):
+		self._quantidade_arroz = _quantidade_arroz
+		self._quantidade_feijao = _quantidade_feijao
+		self._quantidade_acucar = _quantidade_acucar
+		self._quantidade_milho =  _quantidade_milho
+		self._caixa = _caixa
+		self._total_renda = _total_renda
+		self._valor_total = _valor_total
+
+# get quantidade_arroz
+@property
+def quantidade_arroz(self):
+	return self._quantidade_arroz	
+# set quantidade_arroz
+@quantidade_arroz.setter
+def quantidade_arroz(self,quantidade_arroz):
+	self._quantidade_arroz = quantidade_arroz
+# ------------------------------------------------------------------------------
+# get quantidade_feijao
+@property
+def quantidade_feijao(self):
+	return self._quantidade_feijao
+# set quantidade_feijao
+@quantidade_feijao.setter
+def quantidade_feijao(self,quantidade_feijao):
+	self._quantidade_feijao = quantidade_feijao
+# ------------------------------------------------------------------------------
+# get quantidade_acucar
+@property
+def quantidade_acucar(self):
+	return self._quantidade_acucar	
+# set quantidade_acucar
+@quantidade_acucar.setter
+def quantidade_acucar(self,quantidade_acucar):
+	self._quantidade_acucar = quantidade_acucar
+# ------------------------------------------------------------------------------
+# get quantidade_milho
+@property
+def quantidade_milho(self):
+	return self._quantidade_milho	
+# set quantidade_milho
+@quantidade_milho.setter
+def quantidade_milho(self,quantidade_milho):
+	self._quantidade_milho = quantidade_milho
+# ------------------------------------------------------------------------------
+# get caixa
+@property
+def caixa(self):
+	return self._caixa	
+# set caixa
+@caixa.setter
+def quanticaixadade_feijao(self,caixa):
+	self._caixa = caixa
+# ------------------------------------------------------------------------------
+# get total_renda
+@property
+def total_renda(self):
+	return self._total_renda	
+# set total_renda
+@total_renda.setter
+def total_renda(self,total_renda):
+	self._total_renda = total_renda
+# ------------------------------------------------------------------------------
+# get valor_total
+@property
+def valor_total(self):
+	return self._valor_total	
+# set valor_total
+@valor_total.setter
+def valor_total(self,valor_total):
+	self._valor_total = valor_total
+
+
 # ---Usuário digitando quantidade de quilos e caixa inicial 
 quantidade_arroz = float(input("Digite a Quantidade de Arroz no Estoque (Em KG): "))
 quantidade_feijao = float(input("Digite a Quantidade de Feijão no Estoque (Em KG): "))
@@ -38,7 +101,7 @@ quantidade_acucar = float(input("Digite a Quantidade de Açucar no Estoque (Em K
 quantidade_milho = float(input("Digite a Quantidade de Milho no Estoque (Em KG): "))
 caixa = float(input("Digite A renda Inicial do Comercio (Em R$): "))
 # ---Adicionando na lista
-gestao_gerente.append(gestao_graos(quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, caixa, 0, 0)) #Graos e Renda do Comercio.
+gestao_gerente =(gestao_graos(quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, caixa, 0, 0)) #Graos e Renda do Comercio.
 # ---FUNÇÃO PARA GERENTE OU DONO REFAZER O ESTOQUE
 def Restoque():
 	print("-+-+-+-+-+-+"*20)
