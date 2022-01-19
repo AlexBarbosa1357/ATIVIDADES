@@ -20,6 +20,9 @@ class Gestao_Cliente:
 		self.kilos_acucar = kilos_acucar
 		self.kilos_milho = kilos_milho
 		self.gasto_cliente = gasto_cliente
+
+
+
 class Gestao_Graos:
 	def __init__(self, quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, caixa, total_renda, valor_total):
 		self._quantidade_arroz = quantidade_arroz
@@ -129,8 +132,7 @@ def Restoque():
 		print("-+-+-+-+-+-+"*20)
 # ---VERIFICANDO QUANTIDADE DE GRÂOS
 def Verificar_graos():
-	for chave in valor_graos.keys():
-  		print(f'Grão = {chave} com Valor = {valor_graos[chave]}')
+	print(valor_graos.items())
 	print('_+_+_+_+_+'*10)
 	for x in gestao_gerente:
 				print(f"Arroz {x.quantidade_arroz}Kg")
