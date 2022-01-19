@@ -21,14 +21,14 @@ class Gestao_Cliente:
 		self.kilos_milho = kilos_milho
 		self.gasto_cliente = gasto_cliente
 class Gestao_Graos:
-	def __init__(self, _quantidade_arroz, _quantidade_feijao, _quantidade_acucar, _quantidade_milho, _caixa, _total_renda, _valor_total):
-		self._quantidade_arroz = _quantidade_arroz
-		self._quantidade_feijao = _quantidade_feijao
-		self._quantidade_acucar = _quantidade_acucar
-		self._quantidade_milho =  _quantidade_milho
-		self._caixa = _caixa
-		self._total_renda = _total_renda
-		self._valor_total = _valor_total
+	def __init__(self, quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, caixa, total_renda, valor_total):
+		self._quantidade_arroz = quantidade_arroz
+		self._quantidade_feijao = quantidade_feijao
+		self._quantidade_acucar = quantidade_acucar
+		self._quantidade_milho =  quantidade_milho
+		self._caixa = caixa
+		self._total_renda = total_renda
+		self._valor_total = valor_total
 
 # get quantidade_arroz
 @property
