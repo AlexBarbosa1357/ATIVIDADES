@@ -7,10 +7,11 @@
 compradores = []
 gestao_gerente = []
 senha = "adm123"
-valor_arroz = 2.10
-valor_feijao = 1.25
-valor_acucar = 1.10
-valor_milho = 1.30
+# valor_arroz = 2.10
+# valor_feijao = 1.25
+# valor_acucar = 1.10
+# valor_milho = 1.30
+valor_graos = {'arroz' : 2.10, 'feijao': 1.25, 'açucar':1.10, 'milho':1.30}
 class gestao_cliente:
 	def __init__(self, nome, data, pagamento, kilos_arroz, kilos_feijao, kilos_acucar, kilos_milho, gasto_cliente):
 		self.nome = nome
@@ -31,11 +32,11 @@ class gestao_graos:
 		self.total_renda = total_renda
 		self.valor_total = valor_total
 # ---Usuário digitando quantidade de quilos e caixa inicial 
-quantidade_arroz = float(input("Digite a Quantidade de Arroz no Estoque: "))
-quantidade_feijao = float(input("Digite a Quantidade de Feijão no Estoque: "))
-quantidade_acucar = float(input("Digite a Quantidade de Açucar no Estoque: "))
-quantidade_milho = float(input("Digite a Quantidade de Milho no Estoque: "))
-caixa = float(input("Digite A renda Inicial do Comercio: "))
+quantidade_arroz = float(input("Digite a Quantidade de Arroz no Estoque (Em KG): "))
+quantidade_feijao = float(input("Digite a Quantidade de Feijão no Estoque (Em KG): "))
+quantidade_acucar = float(input("Digite a Quantidade de Açucar no Estoque (Em KG): "))
+quantidade_milho = float(input("Digite a Quantidade de Milho no Estoque (Em KG): "))
+caixa = float(input("Digite A renda Inicial do Comercio (Em R$): "))
 # ---Adicionando na lista
 gestao_gerente.append(gestao_graos(quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, caixa, 0, 0)) #Graos e Renda do Comercio.
 # ---FUNÇÃO PARA GERENTE OU DONO REFAZER O ESTOQUE
@@ -65,6 +66,9 @@ def Restoque():
 		print("-+-+-+-+-+-+"*20)
 # ---VERIFICANDO QUANTIDADE DE GRÂOS
 def Verificar_graos():
+	for chave in valor_graos.keys():
+  		print(f'Grão = {chave} com Valor = {valor_graos[chave]}')
+	print('_+_+_+_+_+'*10)
 	for x in gestao_gerente:
 				print(f"Arroz {x.quantidade_arroz}Kg")
 				print(f"Feijão {x.quantidade_feijao}Kg")
@@ -72,13 +76,13 @@ def Verificar_graos():
 				print(f"Milho {x.quantidade_milho} Kg")
 # ---FUNÇÃO DO CLIENTE COMPRAR ARROZ:
 def Comprar_Arroz():
-	print("-+-+-+-+-+-+"*20)
+	print("-+-+-+-+-+-+"*14)
 	nome = str(input("Informe seu Nome: "))
 	data = str(input("Informe a Data da compra: "))
 	pagamento = str(input("Informe a forma de pagamento: [Pix ou Espécie] "))
 	kilos_arroz = float(input("Informe a quantidade de Kilos Arroz comprados: "))
 	print("-+-+-+-+-+-+"*20)
-	gasto_cliente = kilos_arroz * valor_arroz
+	gasto_cliente = kilos_arroz * valor_graos.get('arroz')
 	for x in gestao_gerente:
 		if kilos_arroz <= x.quantidade_arroz:
 			x.quantidade_arroz = x.quantidade_arroz - kilos_arroz 
@@ -99,7 +103,7 @@ def Comprar_Feijao():
 	pagamento = str(input("Informe a forma de pagamento: [Pix ou Espécie] "))
 	kilos_feijao = int(input("Informe a quantidade de Kilos de Feijão comprados: "))
 	print("-+-+-+-+-+-+"*20)
-	gasto_cliente = kilos_feijao * valor_feijao 
+	gasto_cliente = kilos_feijao * valor_graos.get('feijao') 
 	for x in gestao_gerente:
 		if kilos_feijao <= x.quantidade_feijao:
 			x.quantidade_feijao = x.quantidade_feijao - kilos_feijao 
@@ -120,7 +124,7 @@ def Comprar_Acucar():
 	pagamento = str(input("Informe a forma de pagamento: [Pix ou Espécie] "))
 	kilos_acucar = int(input("Informe a quantidade de Kilos de Açucar comprados: "))
 	print("-+-+-+-+-+-+"*20)
-	gasto_cliente = kilos_acucar * valor_acucar
+	gasto_cliente = kilos_acucar * valor_graos.get('açucar')
 	for x in gestao_gerente:
 		if kilos_acucar <= x.quantidade_acucar:
 			x.quantidade_acucar = x.quantidade_acucar - kilos_acucar 
@@ -141,7 +145,7 @@ def Comprar_Milho():
 	pagamento = str(input("Informe a forma de pagamento: [Pix ou Espécie] "))
 	kilos_milho = int(input("Informe a quantidade de Kilos de Milho comprados: "))
 	print("-+-+-+-+-+-+"*20)
-	gasto_cliente = kilos_milho * valor_milho
+	gasto_cliente = kilos_milho * valor_graos.get('milho')
 	for x in gestao_gerente:
 		if kilos_milho <= x.quantidade_milho:
 			x.quantidade_milho = x.quantidade_milho - kilos_milho 
