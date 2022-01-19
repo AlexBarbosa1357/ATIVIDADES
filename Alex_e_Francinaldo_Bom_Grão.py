@@ -32,7 +32,7 @@ class Gestao_Graos:
 		self._caixa = caixa
 		self._total_renda = total_renda
 		self._valor_total = valor_total
-	
+
 	# get quantidade_arroz
 	@property
 	def quantidade_arroz(self):
@@ -95,8 +95,8 @@ class Gestao_Graos:
 	@valor_total.setter
 	def valor_total(self,valor_total):
 		self._valor_total = valor_total
-	
-	
+
+
 # ---Usuário digitando quantidade de quilos e caixa inicial 
 quantidade_arroz = float(input("Digite a Quantidade de Arroz no Estoque (Em KG): "))
 quantidade_feijao = float(input("Digite a Quantidade de Feijão no Estoque (Em KG): "))
@@ -104,7 +104,7 @@ quantidade_acucar = float(input("Digite a Quantidade de Açucar no Estoque (Em K
 quantidade_milho = float(input("Digite a Quantidade de Milho no Estoque (Em KG): "))
 caixa = float(input("Digite A renda Inicial do Comercio (Em R$): "))
 # ---Adicionando na lista
-gestao_gerente =(Gestao_Graos(quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, caixa, 0, 0)) #Graos e Renda do Comercio.
+gestao_gerente.append(Gestao_Graos(quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, caixa, 0, 0)) #Graos e Renda do Comercio.
 # ---FUNÇÃO PARA GERENTE OU DONO REFAZER O ESTOQUE
 def Restoque():
 	print("-+-+-+-+-+-+"*20)
@@ -223,7 +223,7 @@ def Comprar_Milho():
 		else:
 			print(f"Sem quantidade de Estoque Suficiente para essa Quantidade \nTemos Apenas {x.quantidade_feijao}Kg em estoque")
 			break
-# ---FUNÇÃO PARa VERIFICAR HISTORICO DE VENDAS DOS CLIENTES
+# ---FUNÇÃO PARA VERIFICAR HISTORICO DE VENDAS DOS CLIENTES
 def Verificando_ultimas_vendas():
 	for x in compradores:
 		print("-+-+-+-+-+-+"*20)
