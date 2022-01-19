@@ -10,7 +10,7 @@ senha = "adm123"
 # valor_acucar = 1.10
 # valor_milho = 1.30
 valor_graos = {'arroz' : 2.10, 'feijao': 1.25, 'açucar':1.10, 'milho':1.30}
-class gestao_cliente:
+class Gestao_Cliente:
 	def __init__(self, nome, data, pagamento, kilos_arroz, kilos_feijao, kilos_acucar, kilos_milho, gasto_cliente):
 		self.nome = nome
 		self.data = data
@@ -20,7 +20,7 @@ class gestao_cliente:
 		self.kilos_acucar = kilos_acucar
 		self.kilos_milho = kilos_milho
 		self.gasto_cliente = gasto_cliente
-class gestao_graos:
+class Gestao_Graos:
 	def __init__(self, _quantidade_arroz, _quantidade_feijao, _quantidade_acucar, _quantidade_milho, _caixa, _total_renda, _valor_total):
 		self._quantidade_arroz = _quantidade_arroz
 		self._quantidade_feijao = _quantidade_feijao
@@ -101,7 +101,7 @@ quantidade_acucar = float(input("Digite a Quantidade de Açucar no Estoque (Em K
 quantidade_milho = float(input("Digite a Quantidade de Milho no Estoque (Em KG): "))
 caixa = float(input("Digite A renda Inicial do Comercio (Em R$): "))
 # ---Adicionando na lista
-gestao_gerente =(gestao_graos(quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, caixa, 0, 0)) #Graos e Renda do Comercio.
+gestao_gerente =(Gestao_Graos(quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, caixa, 0, 0)) #Graos e Renda do Comercio.
 # ---FUNÇÃO PARA GERENTE OU DONO REFAZER O ESTOQUE
 def Restoque():
 	print("-+-+-+-+-+-+"*20)
@@ -154,7 +154,7 @@ def Comprar_Arroz():
 			print(f"O total a ser Pago é: R${gasto_cliente}")
 			print(f"A Quantidade de Arroz requirida foi: {kilos_arroz}Kg")
 			print("-+-+-+-+-+-+"*20)   
-			compradores.append(gestao_cliente(nome, data, pagamento, kilos_arroz, "", "", "", gasto_cliente))
+			compradores.append(Gestao_Cliente(nome, data, pagamento, kilos_arroz, "", "", "", gasto_cliente))
 		else:
 			print(f"Sem quantidade de Estoque Suficiente para essa Quantidade \nTemos Apenas {x.quantidade_arroz}Kg em estoque")
 			break
@@ -175,7 +175,7 @@ def Comprar_Feijao():
 			print(f"O total a ser Pago é: R${gasto_cliente}")
 			print(f"A Quantidade de Feijão requirida foi: {kilos_feijao}Kg")
 			print("-+-+-+-+-+-+"*20)
-			compradores.append(gestao_cliente(nome, data, pagamento, "", kilos_feijao, "", "", gasto_cliente))
+			compradores.append(Gestao_Cliente(nome, data, pagamento, "", kilos_feijao, "", "", gasto_cliente))
 		else:
 			print(f"Sem quantidade de Estoque Suficiente para essa Quantidade \nTemos Apenas {x.quantidade_feijao}Kg em estoque")
 			break
@@ -192,7 +192,7 @@ def Comprar_Acucar():
 		if kilos_acucar <= x.quantidade_acucar:
 			x.quantidade_acucar = x.quantidade_acucar - kilos_acucar 
 			x.caixa = x.caixa + gasto_cliente
-			compradores.append(gestao_cliente(nome, data, pagamento, "", "", kilos_acucar, "", gasto_cliente))
+			compradores.append(Gestao_Cliente(nome, data, pagamento, "", "", kilos_acucar, "", gasto_cliente))
 			print("-+-+-+-+-+-+"*20)
 			print(f"O total a ser Pago é: R${gasto_cliente}")
 			print(f"A Quantidade de Açucar requirida foi: {kilos_acucar}Kg")
@@ -217,7 +217,7 @@ def Comprar_Milho():
 			print(f"O total a ser Pago é: R${gasto_cliente}")
 			print(f"A Quantidade de Milho requirida foi: {kilos_milho}Kg")
 			print("-+-+-+-+-+-+"*20)
-			compradores.append(gestao_cliente(nome, data, pagamento, "", "", "", kilos_milho, gasto_cliente))
+			compradores.append(Gestao_Cliente(nome, data, pagamento, "", "", "", kilos_milho, gasto_cliente))
 		else:
 			print(f"Sem quantidade de Estoque Suficiente para essa Quantidade \nTemos Apenas {x.quantidade_feijao}Kg em estoque")
 			break
