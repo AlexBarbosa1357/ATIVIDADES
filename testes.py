@@ -1,8 +1,6 @@
-#  ---DECLARAÇÃO DE CLASSES, VAIRAVEIS E LISTAS
+# ---DECLARAÇÃO DE CLASSES, VAIRAVEIS E LISTAS
 
 # ___ Dicionario numa nova area pra mostrar preços,  e no historico de compras clientes e gerente
-
-
 
 compradores = []
 gestao_gerente = []
@@ -12,7 +10,7 @@ senha = "adm123"
 # valor_acucar = 1.10
 # valor_milho = 1.30
 valor_graos = {'arroz' : 2.10, 'feijao': 1.25, 'açucar':1.10, 'milho':1.30}
-class gestao_cliente:
+class Gestao_Cliente:
 	def __init__(self, nome, data, pagamento, kilos_arroz, kilos_feijao, kilos_acucar, kilos_milho, gasto_cliente):
 		self.nome = nome
 		self.data = data
@@ -22,15 +20,83 @@ class gestao_cliente:
 		self.kilos_acucar = kilos_acucar
 		self.kilos_milho = kilos_milho
 		self.gasto_cliente = gasto_cliente
-class gestao_graos:
+
+
+
+class Gestao_Graos:
 	def __init__(self, quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, caixa, total_renda, valor_total):
-		self.quantidade_arroz = quantidade_arroz
-		self.quantidade_feijao = quantidade_feijao
-		self.quantidade_acucar = quantidade_acucar
-		self.quantidade_milho =  quantidade_milho
-		self.caixa = caixa
-		self.total_renda = total_renda
-		self.valor_total = valor_total
+		self._quantidade_arroz = quantidade_arroz
+		self._quantidade_feijao = quantidade_feijao
+		self._quantidade_acucar = quantidade_acucar
+		self._quantidade_milho =  quantidade_milho
+		self._caixa = caixa
+		self._total_renda = total_renda
+		self._valor_total = valor_total
+
+	# get quantidade_arroz
+	@property
+	def quantidade_arroz(self):
+		return self._quantidade_arroz	
+	# set quantidade_arroz
+	@quantidade_arroz.setter
+	def quantidade_arroz(self,quantidade_arroz):
+		self._quantidade_arroz = quantidade_arroz
+	# ------------------------------------------------------------------------------
+	# get quantidade_feijao
+	@property
+	def quantidade_feijao(self):
+		return self._quantidade_feijao
+	# set quantidade_feijao
+	@quantidade_feijao.setter
+	def quantidade_feijao(self,quantidade_feijao):
+		self._quantidade_feijao = quantidade_feijao
+	# ------------------------------------------------------------------------------
+	# get quantidade_acucar
+	@property
+	def quantidade_acucar(self):
+		return self._quantidade_acucar	
+	# set quantidade_acucar
+	@quantidade_acucar.setter
+	def quantidade_acucar(self,quantidade_acucar):
+		self._quantidade_acucar = quantidade_acucar
+	# ------------------------------------------------------------------------------
+	# get quantidade_milho
+	@property
+	def quantidade_milho(self):
+		return self._quantidade_milho	
+	# set quantidade_milho
+	@quantidade_milho.setter
+	def quantidade_milho(self,quantidade_milho):
+		self._quantidade_milho = quantidade_milho
+	# ------------------------------------------------------------------------------
+	# get caixa
+	@property
+	def caixa(self):
+		return self._caixa	
+	# set caixa
+	@caixa.setter
+	def quanticaixadade_feijao(self,caixa):
+		self._caixa = caixa
+	# ------------------------------------------------------------------------------
+	# get total_renda
+	@property
+	def total_renda(self):
+		return self._total_renda	
+	# set total_renda
+	@total_renda.setter
+	def total_renda(self,total_renda):
+		self._total_renda = total_renda
+	# ------------------------------------------------------------------------------
+	# get valor_total
+	@property
+	def valor_total(self):
+		return self._valor_total	
+	# set valor_total
+	@valor_total.setter
+	def valor_total(self,valor_total):
+		self._valor_total = valor_total
+
+
 # ---Usuário digitando quantidade de quilos e caixa inicial 
 quantidade_arroz = float(input("Digite a Quantidade de Arroz no Estoque (Em KG): "))
 quantidade_feijao = float(input("Digite a Quantidade de Feijão no Estoque (Em KG): "))
@@ -38,7 +104,7 @@ quantidade_acucar = float(input("Digite a Quantidade de Açucar no Estoque (Em K
 quantidade_milho = float(input("Digite a Quantidade de Milho no Estoque (Em KG): "))
 caixa = float(input("Digite A renda Inicial do Comercio (Em R$): "))
 # ---Adicionando na lista
-gestao_gerente.append(gestao_graos(quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, caixa, 0, 0)) #Graos e Renda do Comercio.
+gestao_gerente.append(Gestao_Graos(quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, caixa, 0, 0)) #Graos e Renda do Comercio.
 # ---FUNÇÃO PARA GERENTE OU DONO REFAZER O ESTOQUE
 def Restoque():
 	print("-+-+-+-+-+-+"*20)
@@ -66,6 +132,7 @@ def Restoque():
 		print("-+-+-+-+-+-+"*20)
 # ---VERIFICANDO QUANTIDADE DE GRÂOS
 def Verificar_graos():
+	print(valor_graos.items())
 	print('_+_+_+_+_+'*10)
 	for x in gestao_gerente:
 				print(f"Arroz {x.quantidade_arroz}Kg")
@@ -89,7 +156,7 @@ def Comprar_Arroz():
 			print(f"O total a ser Pago é: R${gasto_cliente}")
 			print(f"A Quantidade de Arroz requirida foi: {kilos_arroz}Kg")
 			print("-+-+-+-+-+-+"*20)   
-			compradores.append(gestao_cliente(nome, data, pagamento, kilos_arroz, "", "", "", gasto_cliente))
+			compradores.append(Gestao_Cliente(nome, data, pagamento, kilos_arroz, "", "", "", gasto_cliente))
 		else:
 			print(f"Sem quantidade de Estoque Suficiente para essa Quantidade \nTemos Apenas {x.quantidade_arroz}Kg em estoque")
 			break
@@ -110,7 +177,7 @@ def Comprar_Feijao():
 			print(f"O total a ser Pago é: R${gasto_cliente}")
 			print(f"A Quantidade de Feijão requirida foi: {kilos_feijao}Kg")
 			print("-+-+-+-+-+-+"*20)
-			compradores.append(gestao_cliente(nome, data, pagamento, "", kilos_feijao, "", "", gasto_cliente))
+			compradores.append(Gestao_Cliente(nome, data, pagamento, "", kilos_feijao, "", "", gasto_cliente))
 		else:
 			print(f"Sem quantidade de Estoque Suficiente para essa Quantidade \nTemos Apenas {x.quantidade_feijao}Kg em estoque")
 			break
@@ -127,7 +194,7 @@ def Comprar_Acucar():
 		if kilos_acucar <= x.quantidade_acucar:
 			x.quantidade_acucar = x.quantidade_acucar - kilos_acucar 
 			x.caixa = x.caixa + gasto_cliente
-			compradores.append(gestao_cliente(nome, data, pagamento, "", "", kilos_acucar, "", gasto_cliente))
+			compradores.append(Gestao_Cliente(nome, data, pagamento, "", "", kilos_acucar, "", gasto_cliente))
 			print("-+-+-+-+-+-+"*20)
 			print(f"O total a ser Pago é: R${gasto_cliente}")
 			print(f"A Quantidade de Açucar requirida foi: {kilos_acucar}Kg")
@@ -152,11 +219,11 @@ def Comprar_Milho():
 			print(f"O total a ser Pago é: R${gasto_cliente}")
 			print(f"A Quantidade de Milho requirida foi: {kilos_milho}Kg")
 			print("-+-+-+-+-+-+"*20)
-			compradores.append(gestao_cliente(nome, data, pagamento, "", "", "", kilos_milho, gasto_cliente))
+			compradores.append(Gestao_Cliente(nome, data, pagamento, "", "", "", kilos_milho, gasto_cliente))
 		else:
 			print(f"Sem quantidade de Estoque Suficiente para essa Quantidade \nTemos Apenas {x.quantidade_feijao}Kg em estoque")
 			break
-# ---FUNÇÃO PARa VERIFICAR HISTORICO DE VENDAS DOS CLIENTES
+# ---FUNÇÃO PARA VERIFICAR HISTORICO DE VENDAS DOS CLIENTES
 def Verificando_ultimas_vendas():
 	for x in compradores:
 		print("-+-+-+-+-+-+"*20)
@@ -187,7 +254,7 @@ def Comprar_Graos():
 			print("Opção Invalida.")
 	pass  
 # ---FUNÇÃO MENU DO CLIENTE
-def Gestao_Cliente():
+def Gestao_cliente():
 	while True:
 		print("-+-+-+-+-+-+"*20)
 		print("1- Comprar Grãos \n2- verificar Grãos \n0- Sair")
@@ -245,7 +312,7 @@ while True:
 	print("-+-+-+-+-+-+"*20)
 	opcao = str(input("Informe a Opção: "))
 	if opcao == "1":
-			Gestao_Cliente()
+			Gestao_cliente()
 	elif opcao == "2":
 		opc = str(input("Digite Sua Senha: "))
 		if opc == senha:
