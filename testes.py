@@ -75,7 +75,7 @@ class Gestao_Graos:
 		return self._caixa	
 	# set caixa
 	@caixa.setter
-	def quanticaixadade_feijao(self,caixa):
+	def caixa(self,caixa):
 		self._caixa = caixa
 	# ------------------------------------------------------------------------------
 	# get total_renda
