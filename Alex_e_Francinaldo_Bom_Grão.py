@@ -1,6 +1,6 @@
 # ---DECLARAÇÃO DE CLASSES, VAIRAVEIS E LISTAS
 
-# ___ Dicionario numa nova area pra mostrar preços,  e no historico de compras clientes e gerente
+# ___ Dicionario numa nova area pra mostrar pTrabalhoreços,  e no historico de compras clientes e gerente
 
 compradores = []
 gestao_gerente = []
@@ -20,8 +20,6 @@ class Gestao_Cliente:
 		self.kilos_acucar = kilos_acucar
 		self.kilos_milho = kilos_milho
 		self.gasto_cliente = gasto_cliente
-
-
 
 class Gestao_Graos:
 	def __init__(self, quantidade_arroz, quantidade_feijao, quantidade_acucar, quantidade_milho, caixa, total_renda, valor_total):
