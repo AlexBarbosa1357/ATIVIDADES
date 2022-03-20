@@ -113,6 +113,7 @@ def Restoque():
 	total_renda = float(input("Informe a Quantia gasta em Arroz, Feijão, Açucar e Milho em R$:"))
 	print("-+-+-+-+-+-+"*20)
 	for x in gestao_gerente:
+		# x.caixa = round( )
 		print("-+-+-+-+-+-+"*20)
 		x.quantidade_arroz = total_arroz + x.quantidade_arroz
 		print(f"A Quantidade de Arroz agora é {x.quantidade_arroz}Kg")
@@ -126,7 +127,7 @@ def Restoque():
 		x.caixa = x.caixa - total_renda
 		x.total_renda = total_renda
 		print(f"O dinheiro Gasto em Arroz, Feijão, Açucar e Milho foi R${total_renda}")
-		print(f"A renda agora é de R${x.caixa}")
+		print(f"A renda agora é de R${round(x.caixa,2)}")
 		print("-+-+-+-+-+-+"*20)
 # ---VERIFICANDO QUANTIDADE DE GRÂOS
 def Verificar_graos():
@@ -278,7 +279,7 @@ def Verificando_Lucros():
 		contador += 1
 		print(f"O Restoque {contador} Tem Lucro de:{lucro}") 
 	if lucro > 0:
-		print(f'Na semana houve lucro de R${lucro} ')
+		print(f'Na semana houve lucro de R${round(lucro, 2)} ')
 	else:
 		print(f'Na semana não houve lucro') 	
 # ---FUNÇÃO MENU DO GERENTE OU DONO
@@ -292,7 +293,7 @@ def Gestao_Gerente():
 			Verificando_ultimas_vendas()
 		elif opcao == "2":
 			for x in gestao_gerente:
-				print(f"O Saldo do Comercio e: R${x.caixa}")
+				print(f"O Saldo do Comercio e: R${round(x.caixa, 2)}")
 		elif opcao == "3":
 			Verificar_graos()
 		elif opcao == "4":
